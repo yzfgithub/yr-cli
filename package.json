@@ -1,5 +1,5 @@
 {
-  "name": "yr-cli",
+  "name": "yreact-cli",
   "version": "1.0.0",
   "description": "react+ts 脚手架",
   "bin": {
@@ -9,7 +9,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "cli", "react", "ts"
+    "cli",
+    "react",
+    "ts"
   ],
   "repository": {
     "type": "git",
