@@ -1,15 +1,17 @@
 {
-  "name": "zf-cli",
-  "version": "1.0.1",
-  "description": "zf-cli test",
-  "main": "bin/zf-cli.js",
+  "name": "yr-cli",
+  "version": "1.0.0",
+  "description": "react+ts 脚手架",
   "bin": {
-    "zf-cli": "bin/zf-cli.js"
+    "zf-cli": "bin/yr-cli.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "keywords": [
+    "cli", "react", "ts"
+  ],
+  "author": "yzfgithub",
   "license": "ISC",
   "devDependencies": {
     "commander": "^9.0.0",
