@@ -1,0 +1,21 @@
+{
+  "name": "zf-cli",
+  "version": "1.0.1",
+  "description": "zf-cli test",
+  "main": "bin/zf-cli.js",
+  "bin": {
+    "zf-cli": "bin/zf-cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "commander": "^9.0.0",
+    "inquirer": "^8.2.1"
+  },
+  "dependencies": {
+    "ora": "1.3.0"
+  }
+}
