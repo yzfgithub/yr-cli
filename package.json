@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "react+ts 脚手架",
   "bin": {
-    "zf-cli": "bin/yr-cli.js"
+    "yreact-cli": "bin/yr-cli.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
