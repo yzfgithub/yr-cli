@@ -1,6 +1,6 @@
 {
   "name": "yreact-cli",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "react+ts 脚手架",
   "bin": {
     "yreact-cli": "bin/yr-cli.js"
