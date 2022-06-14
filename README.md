@@ -3,7 +3,7 @@
 如果创建react+ts模版:
 ```yreact-cli init projectName --typescript```
 
-如果创建react-js模版:<还没做呢..>
+如果创建react-js模版:
 ```yreact-cli init projectName --javascript```
 
 如果创建react-nextjs模版:<还没做呢..>
