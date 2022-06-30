@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 
-console.log('zf-cli working2');
-const { program } = require("commander")
-const process = require("child_process");
-const path = require('path');
-const { cwd } = require('process');
-const fs = require('fs');
-const inquirer = require('inquirer');
-const ora = require('ora');
+console.log('zf-react-cli working');
+
+import { program } from 'commander'
+import process from 'child_process'
+import inquirer from 'inquirer'
+import { runDownload } from '../utils/index.js'
 
 program.command('init <name>')
     // .option('-f --force',"如果存在输入的项目目录，就强制删除项目目录")
@@ -39,18 +37,6 @@ program.command('init <name>')
             default: '1.0.0'
         }]
 
-        function modifyPackageJsonItem(file, value, type) {
-            var packageJson = fs.readFileSync(`./${file}/package.json`);
-            var packageObj = JSON.parse(packageJson);
-            packageObj[type] = value
-            fs.writeFileSync(`./${file}/package.json`, JSON.stringify(packageObj, null, '\t'), function(err) {
-                if(err) {
-                    console.log(err)
-                }
-            })
-
-        }
-
         inquirer.prompt(promptList).then(answers => {
 
             // const tmplDir = path.join(__dirname, name) // 模版目录
@@ -59,37 +45,11 @@ program.command('init <name>')
 
             console.log(answers);
             if(cmd.typescript || answers.type === 'typescript') {
-                let spinner = ora('downloading... (just take a break, these whole things may take a long time.)')
-                spinner.start();
-
-                const gitCommand = 'git clone https://github.com/yzfgithub/react-ts-template.git '+name;
-                process.exec(gitCommand, function(err,stdout,stderr) {
-                    spinner.stop();
-                    if(err !== null && stderr !== null) {
-                        console.log('exec error:' + error);
-                        return ;
-                    }
-                    console.log(stdout);
-                    console.log('clone success')
-                    modifyPackageJsonItem(name, answers.version || '1.0.0', 'version')
-                    modifyPackageJsonItem(name, name, 'name')
-                })
+                const gitCommand = 'https://github.com/yzfgithub/react-ts-template.git';
+                runDownload(gitCommand, answers, name)
             } else if(cmd.javascript || answers.type === 'javascript') {
-                let spinner = ora('downloading... (just take a break, these whole things may take a long time.)')
-                spinner.start();
-
-                const gitCommand = 'git clone https://github.com/yzfgithub/react-js-template.git '+name;
-                process.exec(gitCommand, function(err,stdout,stderr) {
-                    spinner.stop();
-                    if(err !== null && stderr !== null) {
-                        console.log('exec error:' + error);
-                        return ;
-                    }
-                    console.log(stdout);
-                    console.log('clone success')
-                    modifyPackageJsonItem(name, answers.version || '1.0.0', 'version')
-                    modifyPackageJsonItem(name, name, 'name')
-                })
+                const gitCommand = 'https://github.com/yzfgithub/react-js-template.git';
+                runDownload(gitCommand, answers, name)
             } else if(cmd.nextjs || answers.type === 'nextjs') {
 
             } else {
@@ -106,3 +66,4 @@ program.command('init <name>')
 
 })
 program.parse(process.argv);
+

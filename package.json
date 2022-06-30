@@ -1,10 +1,11 @@
 {
   "name": "yreact-cli",
-  "version": "1.0.4",
-  "description": "react+ts 脚手架",
+  "version": "1.0.5",
+  "description": "react 脚手架",
   "bin": {
     "yreact-cli": "bin/yr-cli.js"
   },
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
