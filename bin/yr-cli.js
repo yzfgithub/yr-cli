@@ -51,7 +51,8 @@ program.command('init <name>')
                 const gitCommand = 'https://github.com/yzfgithub/react-js-template.git';
                 runDownload(gitCommand, answers, name)
             } else if(cmd.nextjs || answers.type === 'nextjs') {
-
+                const gitCommand = 'https://github.com/yzfgithub/nextjs-template.git';
+                runDownload(gitCommand, answers, name)
             } else {
                 console.log("something wrong!!")
                 return ;
