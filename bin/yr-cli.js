@@ -45,14 +45,14 @@ program.command('init <name>')
 
             console.log(answers);
             if(cmd.typescript || answers.type === 'typescript') {
-                const gitCommand = 'https://github.com/yzfgithub/react-ts-template.git';
-                runDownload(gitCommand, answers, name)
+                const gitAddress = 'https://github.com/yzfgithub/react-ts-template.git';
+                runDownload(gitAddress, answers, name)
             } else if(cmd.javascript || answers.type === 'javascript') {
-                const gitCommand = 'https://github.com/yzfgithub/react-js-template.git';
-                runDownload(gitCommand, answers, name)
+                const gitAddress = 'https://github.com/yzfgithub/react-js-template.git';
+                runDownload(gitAddress, answers, name)
             } else if(cmd.nextjs || answers.type === 'nextjs') {
-                const gitCommand = 'https://github.com/yzfgithub/nextjs-template.git';
-                runDownload(gitCommand, answers, name)
+                const gitAddress = 'https://github.com/yzfgithub/nextjs-template.git';
+                runDownload(gitAddress, answers, name)
             } else {
                 console.log("something wrong!!")
                 return ;
